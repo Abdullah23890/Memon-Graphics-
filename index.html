@@ -741,6 +741,241 @@
       .services-grid { grid-template-columns: 1fr; }
       .hero-btns { flex-direction: column; }
     }
+
+    /* ─── PRICING ─── */
+    #pricing {
+      background: var(--black);
+      padding: 100px 5%;
+    }
+
+    .pricing-header { text-align: center; margin-bottom: 64px; }
+    .pricing-header .section-desc { margin: 16px auto 0; }
+    .pricing-header .divider { margin: 20px auto; }
+
+    .pricing-toggle {
+      display: inline-flex;
+      background: var(--card);
+      border: 1px solid rgba(245,166,35,0.15);
+      border-radius: 40px;
+      padding: 5px;
+      margin-top: 28px;
+    }
+
+    .toggle-btn {
+      padding: 9px 24px;
+      border-radius: 30px;
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font-family: 'Outfit', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-transform: uppercase;
+    }
+
+    .toggle-btn.active {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .pricing-card {
+      background: var(--card);
+      border: 1px solid rgba(245,166,35,0.1);
+      border-radius: 20px;
+      padding: 36px 32px 40px;
+      position: relative;
+      transition: all 0.4s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(245,166,35,0.3);
+      box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+    }
+
+    .pricing-card.popular {
+      background: linear-gradient(145deg, #1a1500 0%, #161616 60%);
+      border-color: var(--gold);
+      border-width: 2px;
+      transform: scale(1.04);
+      box-shadow: 0 20px 60px rgba(245,166,35,0.15);
+    }
+
+    .pricing-card.popular:hover {
+      transform: scale(1.04) translateY(-8px);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--black);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 18px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .plan-icon {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .plan-icon.startup { background: rgba(99,179,237,0.12); border: 1px solid rgba(99,179,237,0.25); }
+    .plan-icon.professional { background: rgba(245,166,35,0.15); border: 1px solid rgba(245,166,35,0.35); }
+    .plan-icon.premium { background: rgba(167,139,250,0.12); border: 1px solid rgba(167,139,250,0.25); }
+
+    .plan-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      letter-spacing: 2px;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .plan-tagline {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .plan-price-wrap { margin-bottom: 28px; }
+
+    .plan-price {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 56px;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .plan-price .currency {
+      font-size: 28px;
+      vertical-align: super;
+      margin-right: 2px;
+    }
+
+    .plan-price .period {
+      font-size: 16px;
+      color: var(--muted);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 400;
+    }
+
+    .plan-price-alt {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .plan-divider {
+      height: 1px;
+      background: rgba(245,166,35,0.1);
+      margin-bottom: 24px;
+    }
+
+    .plan-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+      margin-bottom: 32px;
+    }
+
+    .plan-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    .plan-features li .check {
+      color: var(--gold);
+      font-size: 13px;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+
+    .plan-features li.disabled {
+      color: rgba(136,136,136,0.4);
+      text-decoration: line-through;
+    }
+
+    .plan-features li.disabled .check { color: rgba(136,136,136,0.3); }
+
+    .plan-cta {
+      display: block;
+      text-align: center;
+      padding: 14px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      transition: all 0.3s;
+      cursor: pointer;
+      border: none;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .plan-cta.outline {
+      border: 1px solid rgba(245,166,35,0.35);
+      color: var(--gold);
+      background: transparent;
+    }
+
+    .plan-cta.outline:hover {
+      background: rgba(245,166,35,0.08);
+      border-color: var(--gold);
+    }
+
+    .plan-cta.filled {
+      background: var(--gold);
+      color: var(--black);
+      box-shadow: 0 4px 20px rgba(245,166,35,0.35);
+    }
+
+    .plan-cta.filled:hover {
+      background: var(--gold-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(245,166,35,0.5);
+    }
+
+    .pricing-note {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .pricing-note span { color: var(--gold); }
+
+    @media (max-width: 900px) {
+      .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
+      .pricing-card.popular { transform: scale(1); }
+      .pricing-card.popular:hover { transform: translateY(-8px); }
+    }
   </style>
 </head>
 <body>
@@ -759,6 +994,7 @@
     <li><a href="#home">Home</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#pricing">Pricing</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
   </ul>
@@ -772,6 +1008,7 @@
   <a href="#home" onclick="toggleMenu()">Home</a>
   <a href="#services" onclick="toggleMenu()">Services</a>
   <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#pricing" onclick="toggleMenu()">Pricing</a>
   <a href="#contact" onclick="toggleMenu()">Contact</a>
   <a href="#contact" onclick="toggleMenu()">Get a Quote →</a>
 </div>
@@ -1061,6 +1298,116 @@
   </div>
 </section>
 
+<!-- ─── PRICING ─── -->
+<section id="pricing">
+  <div class="pricing-header">
+    <div class="section-label">Packages & Plans</div>
+    <h2 class="section-title">OUR <span class="gold">PRICING</span></h2>
+    <div class="divider"></div>
+    <p class="section-desc">Affordable, transparent pricing designed for Pakistani businesses. No hidden charges — just great design at the right price.</p>
+    <div class="pricing-toggle">
+      <button class="toggle-btn active" onclick="setbilling('monthly',this)">Monthly</button>
+      <button class="toggle-btn" onclick="setbilling('yearly',this)">Yearly <span style="color:var(--gold);font-size:10px;"> −20%</span></button>
+    </div>
+  </div>
+
+  <div class="pricing-grid">
+
+    <!-- STARTUP -->
+    <div class="pricing-card">
+      <div class="plan-icon startup">🚀</div>
+      <div class="plan-name">Startup</div>
+      <div class="plan-tagline">Perfect for new businesses & freelancers</div>
+      <div class="plan-price-wrap">
+        <div class="plan-price">
+          <span class="currency">Rs.</span><span class="amount" data-monthly="4999" data-yearly="3999">4,999</span>
+          <span class="period"> / month</span>
+        </div>
+        <div class="plan-price-alt">Billed monthly · ~$18 USD</div>
+      </div>
+      <div class="plan-divider"></div>
+      <ul class="plan-features">
+        <li><span class="check">✦</span> 1 Logo Design (3 concepts)</li>
+        <li><span class="check">✦</span> 4 Social Media Posts (IG / FB)</li>
+        <li><span class="check">✦</span> 2 Poster Designs</li>
+        <li><span class="check">✦</span> 1 Banner Design</li>
+        <li><span class="check">✦</span> 2 Revisions per design</li>
+        <li><span class="check">✦</span> PNG + PDF delivery</li>
+        <li><span class="check">✦</span> 5–7 Day turnaround</li>
+        <li><span class="check">✦</span> WhatsApp support</li>
+        <li class="disabled"><span class="check">✦</span> Advertisement Design</li>
+        <li class="disabled"><span class="check">✦</span> Campaign Package</li>
+        <li class="disabled"><span class="check">✦</span> Source files (AI/PSD)</li>
+      </ul>
+      <button class="plan-cta outline" onclick="orderPlan('Startup')">Get Started →</button>
+    </div>
+
+    <!-- PROFESSIONAL -->
+    <div class="pricing-card popular">
+      <div class="popular-badge">⭐ Most Popular</div>
+      <div class="plan-icon professional">💼</div>
+      <div class="plan-name">Professional</div>
+      <div class="plan-tagline">For growing brands & small businesses</div>
+      <div class="plan-price-wrap">
+        <div class="plan-price">
+          <span class="currency">Rs.</span><span class="amount" data-monthly="9999" data-yearly="7999">9,999</span>
+          <span class="period"> / month</span>
+        </div>
+        <div class="plan-price-alt">Billed monthly · ~$36 USD</div>
+      </div>
+      <div class="plan-divider"></div>
+      <ul class="plan-features">
+        <li><span class="check">✦</span> 2 Logo Designs (5 concepts)</li>
+        <li><span class="check">✦</span> 12 Social Media Posts (IG + FB)</li>
+        <li><span class="check">✦</span> 4 Poster Designs</li>
+        <li><span class="check">✦</span> 3 Banner Designs</li>
+        <li><span class="check">✦</span> 2 Advertisement Designs</li>
+        <li><span class="check">✦</span> Unlimited Revisions</li>
+        <li><span class="check">✦</span> PNG + PDF + Source Files</li>
+        <li><span class="check">✦</span> 3–5 Day turnaround</li>
+        <li><span class="check">✦</span> Priority WhatsApp support</li>
+        <li><span class="check">✦</span> Brand color guide</li>
+        <li class="disabled"><span class="check">✦</span> Full Campaign Package</li>
+      </ul>
+      <button class="plan-cta filled" onclick="orderPlan('Professional')">Choose Professional →</button>
+    </div>
+
+    <!-- PREMIUM -->
+    <div class="pricing-card">
+      <div class="plan-icon premium">👑</div>
+      <div class="plan-name">Premium</div>
+      <div class="plan-tagline">For established brands & enterprises</div>
+      <div class="plan-price-wrap">
+        <div class="plan-price">
+          <span class="currency">Rs.</span><span class="amount" data-monthly="19999" data-yearly="15999">19,999</span>
+          <span class="period"> / month</span>
+        </div>
+        <div class="plan-price-alt">Billed monthly · ~$72 USD</div>
+      </div>
+      <div class="plan-divider"></div>
+      <ul class="plan-features">
+        <li><span class="check">✦</span> Unlimited Logo Revisions</li>
+        <li><span class="check">✦</span> 30 Social Media Posts (IG + FB)</li>
+        <li><span class="check">✦</span> Unlimited Poster Designs</li>
+        <li><span class="check">✦</span> Unlimited Banner Designs</li>
+        <li><span class="check">✦</span> 5 Advertisement Designs</li>
+        <li><span class="check">✦</span> Full Campaign Package</li>
+        <li><span class="check">✦</span> Complete Brand Identity Kit</li>
+        <li><span class="check">✦</span> All Source Files (AI/PSD/CDR)</li>
+        <li><span class="check">✦</span> 24/7 Priority Support</li>
+        <li><span class="check">✦</span> 1–3 Day turnaround</li>
+        <li><span class="check">✦</span> Dedicated designer assigned</li>
+      </ul>
+      <button class="plan-cta outline" onclick="orderPlan('Premium')">Go Premium →</button>
+    </div>
+
+  </div>
+
+  <p class="pricing-note">
+    💬 Custom project? <span>Contact us on WhatsApp</span> for a tailored quote. All prices in PKR (Pakistani Rupees).
+  </p>
+</section>
+
 <!-- ─── FOOTER ─── -->
 <footer>
   <div class="footer-top">
@@ -1080,6 +1427,7 @@
       <ul class="footer-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
         <li><a href="#about">About Us</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -1113,6 +1461,35 @@
 </footer>
 
 <script>
+  // Pricing toggle
+  function setbilling(type, btn) {
+    document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.amount').forEach(el => {
+      const val = parseInt(el.dataset[type]);
+      el.textContent = val.toLocaleString('en-PK');
+    });
+    document.querySelectorAll('.plan-price-alt').forEach((el, i) => {
+      const usd = [18, 36, 72];
+      const disc = type === 'yearly' ? ' (20% off!)' : '';
+      const monthly = type === 'yearly' ? 'Billed yearly' : 'Billed monthly';
+      el.textContent = `${monthly} · ~$${usd[i]} USD${disc}`;
+    });
+  }
+
+  // Order plan
+  function orderPlan(plan) {
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => {
+      const select = document.querySelector('.contact-form select');
+      if (select) {
+        select.value = '';
+        const msg = document.querySelector('.contact-form textarea');
+        if (msg) msg.value = `Hi, I'm interested in the ${plan} plan. Please provide more details.`;
+      }
+    }, 800);
+  }
+
   // Mobile menu toggle
   function toggleMenu() {
     const menu = document.getElementById('mobileMenu');
