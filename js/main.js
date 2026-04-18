@@ -64,13 +64,46 @@
 
   // Form submit
   function handleSubmit() {
-    const btn = document.querySelector('.btn-submit');
-    btn.textContent = '✓ Message Sent!';
-    btn.style.background = '#22c55e';
-    btn.style.color = '#fff';
-    setTimeout(() => {
-      btn.textContent = 'Send Message ✦';
-      btn.style.background = '';
-      btn.style.color = '';
-    }, 3000);
+  const name    = document.querySelector('.contact-form input[type="text"]').value.trim();
+  const phone   = document.querySelectorAll('.contact-form input[type="text"]')[1].value.trim();
+  const email   = document.querySelector('.contact-form input[type="email"]').value.trim();
+  const service = document.querySelector('.contact-form select').value;
+  const details = document.querySelector('.contact-form textarea').value.trim();
+
+  // Basic validation
+  if (!name || !phone) {
+    alert('Please enter at least your Name and Phone number.');
+    return;
   }
+
+  // Build WhatsApp message
+  const message = 
+`🎨 *New Project Inquiry — Memon Graphics*
+
+👤 *Name:* ${name}
+📱 *Phone:* ${phone}
+📧 *Email:* ${email || 'Not provided'}
+🖌️ *Service:* ${service || 'Not selected'}
+
+📝 *Project Details:*
+${details || 'No details provided'}
+
+_Sent from memongraphics.edgeone.app_`;
+
+  const encoded = encodeURIComponent(message);
+  const waURL   = `https://wa.me/923252171357?text=${encoded}`;
+
+  // Open WhatsApp
+  window.open(waURL, '_blank');
+
+  // Visual feedback
+  const btn = document.querySelector('.btn-submit');
+  btn.textContent = '✓ Opening WhatsApp...';
+  btn.style.background = '#22c55e';
+  btn.style.color = '#fff';
+  setTimeout(() => {
+    btn.textContent = 'Send Message ✦';
+    btn.style.background = '';
+    btn.style.color = '';
+  }, 3000);
+}
